@@ -1,0 +1,343 @@
+%section{
+  transform: scale(-1, 1);
+}
+
+@mixin link{
+  color:$color-white;
+  font-family: $font-family-3;
+}
+
+@mixin header_button {
+  margin-top: 40px;
+  border: none;
+  background-color: $ColorButton;
+  width: 126px;
+  height: 40px;
+
+  font-size: 15px;
+  font-weight: 600;
+  color: $color-white;
+  font-family: $font-family-3;
+  }
+  
+  @mixin landing-logo {
+    & {
+      position: relative;
+      padding-left: 134px;
+      padding-top: 17px;
+    }
+  
+    img {
+      float: left;
+      width: 40px;
+      height: 40px;
+      margin-right: 10px;
+    }
+  
+    p {
+      position: inherit;
+      font-size: 20px;
+      margin-top: 0px;
+  
+      font-weight: bold;
+      font-family: $FondFamily1and2;
+      color: $ColorText;
+    }
+  
+    span {
+      display: block;
+      margin-left: 58px;
+  
+      font-size: 8px;
+      font-weight: normal;
+      font-family: $FondFamily1and2;
+      color: $ColorText;
+    }
+  }
+  
+  body {
+    margin: 0px;
+    background-color: $ColorBody;
+    z-index: -1;
+  }
+  
+  .header-wrap {
+    background-image: $HederBackGroung;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 631px;
+    border-radius: 0 0 50% 0 / 40%;
+    .header_button {
+      @include header_button;
+    }
+  
+
+  div {
+    padding-left: 136px;
+  }
+    .header_text {
+      padding-left: 136px;
+      letter-spacing: 0.5px;
+      margin-top: 30px;
+      line-height: 20px;
+      white-space: pre-line;
+    
+      font-size: 14px;
+      font-weight: normal;
+      color: $ColorText;
+      font-family: $FondFamily;
+    }
+    .login {
+      @include link;
+      padding-left: 120px;
+      vertical-align: middle;
+      font-size: 18px;
+    }
+  }
+  
+  .landing-logo {
+    @include landing-logo;
+  }
+  
+  .header_heading {
+    letter-spacing: -1px;
+    padding-left: 134px;
+    margin: 65px 0px 15px 0px;
+    width: 600px;
+    line-height: 65px;
+  
+    font-size: 65px;
+    font-weight: 800;
+    color: $ColorText;
+    font-family: $font-family-3;
+    position: relative;
+    z-index: 2;
+    
+    &::after{
+        content: " ";
+        width: 267px;
+        height: 45px;
+        background-color: $ColorAfter;
+        position: absolute;
+        right: 334px;
+        bottom: 2px;
+        z-index: -1;
+    }
+  }
+
+
+  
+  .section {
+    width: 100%;
+    max-width: 1920px;
+    position: relative;
+
+    .section_text {
+      width: 1349px;
+      text-align: center;
+      font-size: 36px;
+      font-weight: 600;
+      color: $ColorText;
+      font-family: $font-family-3;
+      margin: 35px 0px 20px 0px;
+      position: relative;
+      z-index: 1;
+    }
+  }
+
+   .section_text::after {
+    content: "";
+    width: 160px;
+    height: 45px;
+    background-color: $ColorAfter;
+    z-index: -1;
+    position: absolute;
+    right: 505px;
+    bottom: 10px;
+  }
+
+  
+  .section_card {
+    vertical-align: middle;
+    background-color: $ColorCard;
+    width: 790px;
+    height: 240px;
+    margin-left: 268px;
+    border: solid $ColorBorder;
+    border-radius: 15px;
+    border-width: 10px;
+    display: flex;
+    flex-direction: row-reverse;
+    @extend %section;
+  
+  .section_card_img {
+    border: solid $ColorCard;
+    border-radius: 25px;
+    border-width: 20px;
+    transform: scale(-1, 1);
+    @extend %section;
+  }
+
+  
+  .section_card_right_container {
+    margin: 0px;
+    color: $color-white;
+    font-family: $font-family-3;
+    @extend %section;
+  }
+  .section_card_text {
+    font-family: $FondFamily1and2;
+    font-weight: normal;
+    font-size: 12px;
+    width: 350px;
+    padding-left: 55px;
+    text-align: justify;
+    letter-spacing: 1px;
+    line-height: $LineheLight;
+  }
+}
+  .tm-team-description-container {
+    padding-left: 400px;
+    text-align: center;
+    display: inline-block;
+    position: relative;
+  }
+
+
+  
+  .section_card_heading {
+    letter-spacing: 2px;
+    font-size: 18px;
+    margin-top: 40px;
+    padding-left: 72px;
+    padding-top: 5px;
+    text-align: center;
+  }
+  
+  .section_link {
+    @include link;
+    text-align: center;
+    font-size: 14px;
+    padding-left: 190px;
+  }
+  
+  .section_banner {
+    height: 127px;
+    width: 840px;
+    background: $BgLinear-Gradient;
+    border-radius: 5px;
+    margin-left: 250px;
+    margin-top: 120px;
+    margin-bottom: 30px;
+    position: absolute;
+    z-index: 1;
+  }
+  $section-override: ( ); 
+  @if variable-exists(page-settings) {
+      $section-override: $page-settings; 
+  }
+  $page-settings:  map-merge((
+      float:left,
+      padding-left: 92px,
+      z-index: 1,
+  ), $section-override);
+  
+  .section_banner_text_wrap  {
+    float: map-get($page-settings, float);
+    padding-left: map-get($page-settings, padding-left);
+    z-index:  map-get($page-settings, z-index);
+}
+
+  .section_banner_heading {
+    font-family: $font-family-3;
+    color: $color-anthracite;
+    font-weight: 800;
+    word-spacing: 1px;
+    font-size: 26px;
+    margin-top: 20px;
+    margin-bottom: 5px;
+    z-index: 1;
+  
+    &::after{
+        content: " ";
+        width: 60px;
+        height: 40px;
+        background-color: $ColorAfter;
+        position: absolute;
+        right: 583px;
+        bottom: 75px;
+        z-index: -1;
+    }
+  }
+  
+  .section_banner_text {
+    word-spacing: 1px;
+    font-size: 14px;
+    color: $color-white;
+    font-family: $font-family-3;
+  }
+  
+  .section_banner_button {
+    @include header_button;
+    margin: 40px 0px 0px 187px;
+  }
+
+  .footer{
+      margin-top: 180px;
+      width: 100%;
+      height: 215px;
+      z-index: -1;
+      background: $ColofFooter;
+      position: relative;
+     
+  }
+
+  .footer_logo { 
+    height: 70px;
+    width: 125px;
+    padding-top: 122px;
+    display: inline-block;
+
+    img{
+        float: left;
+    }
+}
+
+  .footer_logo { 
+    height: 70px;
+    width: 125px;
+    padding-top: 122px;
+    display: inline-block;
+
+    p{
+        color: $color-white;
+        font-family: $FondFamily;
+        font-weight: 600;
+
+    }
+    span{
+        color: $color-white;
+        font-family: $FondFamily1and2;
+    }
+  }
+
+  .footer_text {
+    display: inline-block;
+    width: 257px;
+    margin-right: 270px;
+    font-family: $FondFamily1and2;
+    color: $color-white;
+    font-size: 12px;
+    padding-left: 250px;  
+    line-height: $LineheLight;
+  }
+
+  .footer-cr{
+      width: 500px;
+      font-size: 13px;
+      position: relative;
+      font-family: $FondFamily;
+      color: $color-white;
+      z-index: 4;
+      text-align: center;
+  }
