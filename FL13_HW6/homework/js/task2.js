@@ -1,4 +1,3 @@
-/** @format */
 `use strict`;
 let inputWord = prompt(`Input a word`);
 let two = 2;
