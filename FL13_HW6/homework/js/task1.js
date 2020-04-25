@@ -1,5 +1,3 @@
-/** @format */
-
 let inputNumber;
 let inputPercentage;
 let hundred = 100;
