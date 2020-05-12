@@ -1,0 +1,66 @@
+/* TODO: your styles goes here*/
+.imgFolder{
+ background-image: url(/material-icons/MaterialIcons-Regular.woff);
+}
+
+.material-icons1{
+  background-image: url( /task);
+}
+
+.folder{
+  list-style-type: none;
+  background-image: url(material-icons/folder-black-18dp.svg);
+  background-repeat: no-repeat;
+  color: black;
+  padding-left: 17px;
+  z-index: 1;
+
+ }
+
+ .file{
+  list-style-type: none;
+  background-image: url(material-icons/insert_drive_file-black-18dp.svg);
+  background-repeat: no-repeat;
+  color: black;
+  padding-left: 17px;
+  z-index: 1;
+
+ }
+
+ .openFolder{
+  list-style-type: none;
+  background-image: url(material-icons/folder_open-black-18dp.svg);
+  background-repeat: no-repeat;
+  color: black;
+  padding-left: 17px;
+ }
+
+  .input:hover{
+    width: 100px;
+   background-color:#cecece;
+   opacity: 3;
+   z-index: 0;
+   border: none ;
+ }
+
+ .input{
+  border: none;
+}
+
+.folder:hover{
+  width: 100px;
+  background-color:#cecece;
+  opacity: 3;
+  z-index: -1;
+  border: none ;
+}
+
+.file:hover{
+  width: 100px;
+  background-color:#cecece;
+  opacity: 3;
+  z-index: -1;
+  border: none ;
+}
+
+
